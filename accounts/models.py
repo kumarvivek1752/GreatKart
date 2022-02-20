@@ -66,6 +66,9 @@ class Account(AbstractBaseUser):
     USERNAME_FIELD='email'
     REQUIRED_FIELDS = ['username', 'first_name','last_name']
 
+    def full_name(self):
+        return f'{self.first_name} {self.last_name} '
+
     def __str__(self):  #reurining the email in first column 
         return self.email
 
